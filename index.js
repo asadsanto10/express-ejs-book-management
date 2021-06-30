@@ -3,7 +3,7 @@ const expressLayout = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const indexRoute = require('./routes/index');
 const authorsRoute = require('./routes/authors');
-require('dotenv').config({ path: '/.env' });
+require('dotenv').config({ path: './.env' });
 require('./db/connect');
 
 const app = express();

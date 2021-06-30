@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 // database
 // const DB = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.npxlx.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-const DB = 'mongodb://127.0.0.1:27017/book';
+const database = process.env.DATABASE_URI;
 // mongoose
 const connect = async () => {
   try {
-    await mongoose.connect(DB, {
+    await mongoose.connect(database, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
