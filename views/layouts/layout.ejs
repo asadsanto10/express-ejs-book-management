@@ -5,9 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>book management</title>
+    <link
+      href="https://unpkg.com/filepond@^4/dist/filepond.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+      rel="stylesheet"
+    />
+    <style>
+      .filepond--credits {
+        display: none;
+      }
+      /* .filepond--item {
+        width: calc(50% - 0.5em);
+      } */
+    </style>
   </head>
   <body>
     <%- include('../inc/header.ejs') %> <%- include('../inc/error.ejs') %> <%-
     body %>
+
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+
+    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
+
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <!-- filePond -->
+    <script>
+      FilePond.registerPlugin(
+        FilePondPluginImagePreview,
+        FilePondPluginFileEncode,
+        FilePondPluginImageResize,
+        FilePondPluginImageCrop
+      );
+
+      FilePond.setOptions({
+        // styleItemPanelAspectRatio: 30 / 12,
+        imageCropAspectRatio: 50,
+        // imageResizeTargetWidth: 100,
+        // imageResizeTargetHeight: 150,
+      });
+
+      FilePond.parse(document.body);
+    </script>
   </body>
 </html>
