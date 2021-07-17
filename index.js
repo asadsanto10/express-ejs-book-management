@@ -22,6 +22,6 @@ app.use('/', indexRoute);
 app.use('/authors', authorsRoute);
 app.use('/books', booksRoute);
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log('listeing on port 5000');
 });
